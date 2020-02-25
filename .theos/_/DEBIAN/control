@@ -1,0 +1,10 @@
+Package: com.yourcompany.batteryreach
+Name: batteryReach
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: Joseph
+Author: Joseph
+Section: Tweaks
+Version: 0.0.1-5+debug
+Installed-Size: 136
