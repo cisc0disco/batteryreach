@@ -7,7 +7,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = batteryReach
 
-batteryReach_FILES = Tweak.xm
+batteryReach_FILES = Tweak.xm JSViewController.xm JSCustomCell.m
 batteryReach_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk

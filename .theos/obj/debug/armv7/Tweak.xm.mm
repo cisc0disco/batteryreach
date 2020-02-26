@@ -1,16 +1,5 @@
 #line 1 "Tweak.xm"
-int reachabilityHeight = 200;
-
-@interface SBReachabilityWindow : UIView
-    -(id)view;
-@end
-
-@interface SBReachabilitySettings {
-double _yOffsetFactor;
-}
-+(id)settingsControllerModule;
-@end
-
+#import "JSViewController.h"
 
 
 #include <substrate.h>
@@ -33,24 +22,18 @@ double _yOffsetFactor;
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-@class SBReachabilityWindow; @class UITableView; 
+@class JSViewController; @class SBReachabilityWindow; 
 static id (*_logos_orig$_ungrouped$SBReachabilityWindow$view)(_LOGOS_SELF_TYPE_NORMAL SBReachabilityWindow* _LOGOS_SELF_CONST, SEL); static id _logos_method$_ungrouped$SBReachabilityWindow$view(_LOGOS_SELF_TYPE_NORMAL SBReachabilityWindow* _LOGOS_SELF_CONST, SEL); 
+static __inline__ __attribute__((always_inline)) __attribute__((unused)) Class _logos_static_class_lookup$JSViewController(void) { static Class _klass; if(!_klass) { _klass = objc_getClass("JSViewController"); } return _klass; }
+#line 3 "Tweak.xm"
 
-#line 14 "Tweak.xm"
-
-    static id _logos_method$_ungrouped$SBReachabilityWindow$view(_LOGOS_SELF_TYPE_NORMAL SBReachabilityWindow* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {
-        
+    static id _logos_method$_ungrouped$SBReachabilityWindow$view(_LOGOS_SELF_TYPE_NORMAL SBReachabilityWindow* _LOGOS_SELF_CONST __unused self, SEL __unused _cmd) {     
         id Rview = _logos_orig$_ungrouped$SBReachabilityWindow$view(self, _cmd);
 
-        CGRect rect = CGRectMake(0, -375/1.5+11, 667, 375/1.5-11);
 
 
-        UIView *myBox = [[UIView alloc] initWithFrame:rect];
-		myBox.backgroundColor = [UIColor whiteColor];
-    	[Rview addSubview:myBox];
-
-        UITableView *tblView = [[UITableView alloc]initWithFrame:rect];
-        [Rview addSubview:tblView];
+        JSViewController *jsvc = [[_logos_static_class_lookup$JSViewController() alloc] init];
+        [Rview addSubview: jsvc.view];
 
         
         
@@ -60,10 +43,6 @@ static id (*_logos_orig$_ungrouped$SBReachabilityWindow$view)(_LOGOS_SELF_TYPE_N
         return Rview;   
     }
 
-
- 
-
-
 static __attribute__((constructor)) void _logosLocalInit() {
 {Class _logos_class$_ungrouped$SBReachabilityWindow = objc_getClass("SBReachabilityWindow"); MSHookMessageEx(_logos_class$_ungrouped$SBReachabilityWindow, @selector(view), (IMP)&_logos_method$_ungrouped$SBReachabilityWindow$view, (IMP*)&_logos_orig$_ungrouped$SBReachabilityWindow$view);} }
-#line 41 "Tweak.xm"
+#line 20 "Tweak.xm"
