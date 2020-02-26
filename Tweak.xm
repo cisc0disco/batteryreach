@@ -1,17 +1,8 @@
-#import <tableViewTest.m>
-
-int reachabilityHeight = 200;
+#import "ShitTableViewController"
 
 @interface SBReachabilityWindow : UIView
     -(id)view;
 @end
-
-@interface SBReachabilitySettings {
-double _yOffsetFactor;
-}
-+(id)settingsControllerModule;
-@end
-
 
 %hook SBReachabilityWindow
     -(id)view {
@@ -28,7 +19,7 @@ double _yOffsetFactor;
         UITableView *tblView = [[UITableView alloc]initWithFrame:rect];
         [Rview addSubview:tblView];
 
-        // UILabel *myLabel = [[UILabel alloc]initWithFrame: rect];
+        // UI+Label *myLabel = [[UILabel alloc]initWithFrame: rect];
         // [myLabel setBackgroundColor:[UIColor clearColor]];
         // [myLabel setText:@"Smrdíš"];
         // [Rview addSubview:myLabel];
