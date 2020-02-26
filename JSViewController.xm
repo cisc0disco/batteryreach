@@ -68,6 +68,7 @@
         cell = [[JSCustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
 
+    //ty kriple davas devices jako text, potrebujes jejich jmeno
     cell.textLabel.text = [[devices objectAtIndex:indexPath.row] capitalizedString];
     
     return cell;
